@@ -24,7 +24,7 @@ export function CheckSection() {
 export function RegisterSection() {
     // const [checkRegisteredAt, setCheckRegisteredAt] = useState('Unknown')
 
-    const [dateValue, setDateValue] = useState('');
+    const [dateValue, setDateValue] = useState<number>();
     const [hashValue, setHashValue] = useState({});
 
     const inputValue = () => {
@@ -38,7 +38,7 @@ export function RegisterSection() {
             <div className="register-form">
                 <input className={'register-input-one'} type="text" placeholder={'hash'} name={'hash'} required onChange={(event) => setHashValue(event.target.value)}/>
                 <div className={'register-form-input-two'}>
-                    <input className={'register-input-two'} type="date" placeholder={'valid until'} onChange={(event) => setDateValue(event.target.value.replace("-", ".").replace("-", "."))}/>
+                    <input className={'register-input-two'} type="date" placeholder={'valid until'} onChange={(event) => setDateValue(new Date(event.target.value).getTime())}/>
                 </div>
                 <button className={'btn register-btn'} onClick={inputValue} type={'submit'}>register</button>
             </div>
@@ -46,7 +46,7 @@ export function RegisterSection() {
     )
 }
 export function VersionSection() {
-    const [dateValue, setDateValue] = useState('');
+    const [dateValue, setDateValue] = useState<number>();
     const [oldHashValue, setOldHashValue] = useState({});
     const [newHashValue, setNewHashValue] = useState({});
 
@@ -65,7 +65,7 @@ export function VersionSection() {
                     <input className={'version-input-new'} type="text" placeholder={'new document hash'} required name={'old hash'} onChange={(event) => setNewHashValue(event.target.value)}/>
                 </div>
                 <div className="version-until">
-                    <input className={'version-until-input'} type="date" placeholder={'valid until'} name={'valid-until'} onChange={(event) => setDateValue(event.target.value.replace("-", ".").replace("-", "."))}/>
+                    <input className={'version-until-input'} type="date" placeholder={'valid until'} name={'valid-until'} onChange={(event) => setDateValue(new Date(event.target.value).getTime())}/>
                 </div>
                 <a className={'version-btn btn'} onClick={inputValue} href="#">register</a>
             </div>
@@ -84,7 +84,7 @@ export function BulkSection() {
     }
     const setDate = (index, value) => {
         const updated = [...bulkItems]
-        updated[index].date = Math.floor(new Date(value).getTime() / 1000)
+        updated[index].date = value
         setBulkItems(updated)
     }
     return (
@@ -98,7 +98,7 @@ export function BulkSection() {
                                    onChange={(event) => setHash(index, event.target.value)}/>
                             <div className="bulk-until">
                                 <input className={'bulk-input-two'} type="date" placeholder={'valid until'} name={'valid-until'}
-                                       onChange={(event) => setDate(index, event.target.value.replace("-", ".").replace("-", "."))}/>
+                                       onChange={(event) => setDate(index, new Date(event.target.value).getTime())}/>
                             </div>
                             { index === bulkItems.length - 1 &&
                                 <a className={'bulk-form-plus'} onClick={() => setBulkItems([...bulkItems, 4])}>+</a>
@@ -137,7 +137,7 @@ export function NewVersionsSection() {
     }
     const setValueDate = (index, value) => {
         const updated = [...inputItems]
-        updated[index].date = Math.floor(new Date(value).getTime() / 1000)
+        updated[index].date = value
         setInputItems(updated)
     }
     return (
@@ -150,7 +150,7 @@ export function NewVersionsSection() {
                     <input className={'new-versions-input-new'} type="text" placeholder={'new document hash'} required name={'new hash'}
                            onChange={(event) => setNewHash(index, event.target.value)}/>
                     <input className={'new-versions-until-input'} type="date" placeholder={'valid until'} name={'valid-until'}
-                           onChange={(event) => setValueDate(index, event.target.value.replace("-", ".").replace("-", "."))}/>
+                           onChange={(event) => setValueDate(index, new Date(event.target.value).getTime())}/>
                     { index === inputItems.length - 1 &&
                         <a className={'new-versions-form-plus'} onClick={() => setInputItems([...inputItems, {}])}>+</a>
                     }
