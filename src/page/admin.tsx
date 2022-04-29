@@ -72,6 +72,12 @@ export function VersionSection() {
         </div>
     )
 }
+
+interface DocumentItem {
+    hash: string,
+    date?: number
+}
+
 export function BulkSection() {
     const [bulkItems, setBulkItems] = useState<Partial<DocumentItem>[]>([{}])
     function onClickBtn() {
@@ -101,7 +107,7 @@ export function BulkSection() {
                                        onChange={(event) => setDate(index, new Date(event.target.value).getTime())}/>
                             </div>
                             { index === bulkItems.length - 1 &&
-                                <a className={'bulk-form-plus'} onClick={() => setBulkItems([...bulkItems, 4])}>+</a>
+                                <a className={'bulk-form-plus'} onClick={() => setBulkItems([...bulkItems, {}])}>+</a>
                             }
                         </div>
                     </div>
