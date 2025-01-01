@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Metinvest/static/css/main.e90e00d1.css",
-    "main.js": "/Metinvest/static/js/main.d30905dd.js",
+    "main.js": "/Metinvest/static/js/main.c62ee47f.js",
     "static/js/787.cbd7fd86.chunk.js": "/Metinvest/static/js/787.cbd7fd86.chunk.js",
     "static/media/fire.mp3": "/Metinvest/static/media/fire.18da9ee83b30c11d75de.mp3",
     "static/media/music.mp3": "/Metinvest/static/media/music.6f4cc5f77ef8b25bf6b3.mp3",
@@ -52,11 +52,11 @@
     "static/media/DS-Digital-Bold.woff2": "/Metinvest/static/media/DS-Digital-Bold.bac9c727dd318f399c05.woff2",
     "index.html": "/Metinvest/index.html",
     "main.e90e00d1.css.map": "/Metinvest/static/css/main.e90e00d1.css.map",
-    "main.d30905dd.js.map": "/Metinvest/static/js/main.d30905dd.js.map",
+    "main.c62ee47f.js.map": "/Metinvest/static/js/main.c62ee47f.js.map",
     "787.cbd7fd86.chunk.js.map": "/Metinvest/static/js/787.cbd7fd86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e90e00d1.css",
-    "static/js/main.d30905dd.js"
+    "static/js/main.c62ee47f.js"
   ]
 }
